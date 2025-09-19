@@ -9,7 +9,12 @@ export default function Register() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    name: ""
+    name: "",
+    gender: "",
+    age: "",
+    dob: "",
+    phone: "",
+    emergencyContacts: ""
   });
 
   const handleChange = (e) => {
@@ -26,7 +31,16 @@ export default function Register() {
     setIsLoading(true);
 
     try {
-      await register(formData.email, formData.password, formData.name);
+      await register(
+        formData.email,
+        formData.password,
+        formData.name,
+        formData.gender,
+        parseInt(formData.age),
+        formData.dob,
+        formData.phone,
+        formData.emergencyContacts
+      );
     } catch (error) {
       setError(error.message);
     } finally {
@@ -69,6 +83,71 @@ export default function Register() {
               />
             </div>
             <div>
+              <label htmlFor="gender" className="sr-only">Gender</label>
+              <input
+                id="gender"
+                name="gender"
+                type="text"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Gender (e.g. Male, Female, Other)"
+                value={formData.gender}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="age" className="sr-only">Age</label>
+              <input
+                id="age"
+                name="age"
+                type="number"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Age"
+                value={formData.age}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="dob" className="sr-only">Date of Birth</label>
+              <input
+                id="dob"
+                name="dob"
+                type="date"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Date of Birth"
+                value={formData.dob}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="phone" className="sr-only">Phone Number</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="emergencyContacts" className="sr-only">Emergency Contacts</label>
+              <input
+                id="emergencyContacts"
+                name="emergencyContacts"
+                type="text"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Emergency Contacts (comma separated)"
+                value={formData.emergencyContacts}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
               <label htmlFor="email" className="sr-only">Email address</label>
               <input
                 id="email"
@@ -88,7 +167,7 @@ export default function Register() {
                 name="password"
                 type="password"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Password"
                 value={formData.password}
                 onChange={handleChange}

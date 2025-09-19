@@ -29,7 +29,7 @@ export default function LocationTracker() {
     }
 
     return (
-        <div className="fixed bottom-4 right-4 p-4 bg-white rounded-lg shadow-lg max-w-md w-full md:w-auto">
+        <div className="p-4 bg-white bg-opacity-90 rounded-lg shadow-lg max-w-md w-full md:w-auto border border-indigo-200">
             <div className="mb-4">
                 <div className="flex items-center justify-between mb-2">
                     <h3 className="text-lg font-semibold">Location Tracking</h3>

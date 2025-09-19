@@ -7,15 +7,42 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cap:init": "npx cap init",
+    "cap:add": "npx cap add android",
+    "cap:sync": "npx cap sync",
+    "cap:build": "npm run build && npx cap sync",
+    "cap:open": "npx cap open android",
+    "cap:run": "npx cap run android",
+    "android:build": "npm run build && npx cap sync && npx cap open android",
+    "blockchain:setup": "cd blockchain && npm install && node quick-deploy.js",
+    "blockchain:ganache": "setup-ganache.bat",
+    "blockchain:test": "cd blockchain && node test-connection.js",
+    "blockchain:deploy": "cd blockchain && node deploy.js"
   },
   "dependencies": {
+    "@capacitor-community/background-geolocation": "^1.2.26",
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/app": "^6.0.1",
+    "@capacitor/cli": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/device": "^6.0.1",
+    "@capacitor/geolocation": "^6.0.1",
+    "@capacitor/preferences": "^6.0.2",
+    "@capacitor/push-notifications": "^6.0.2",
+    "@capacitor/splash-screen": "^6.0.2",
+    "@capacitor/status-bar": "^6.0.1",
+    "@react-google-maps/api": "^2.20.7",
     "@tailwindcss/vite": "^4.1.13",
+    "@yudiel/react-qr-scanner": "^2.3.1",
     "appwrite": "^19.0.0",
-    "dotenv": "^17.2.2",
+    "crypto-js": "^4.2.0",
+    "qr-scanner": "^1.4.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router-dom": "^7.8.2"
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.8.2",
+    "web3": "^4.16.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
@@ -28,7 +55,9 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
     "postcss": "^8.5.6",
+    "rollup-plugin-visualizer": "^6.0.3",
     "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2",
     "vite": "^7.1.2"
   }
 }

@@ -1,0 +1,9 @@
+{
+  "appId": "com.yatrisuraksha.app",
+  "appName": "Yatri Suraksha",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}

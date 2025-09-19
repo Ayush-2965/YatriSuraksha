@@ -3,11 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Yatri Suraksha - Tourist Safety App</title>
+    
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Yatri Suraksha" />
+    <link rel="apple-touch-icon" href="/vite.svg" />
+    
+    <!-- PWA Install Prompts -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Yatri Suraksha" />
+    
+    <!-- Meta tags for SEO and sharing -->
+    <meta name="description" content="A safety companion application for travelers with real-time location tracking" />
+    <meta property="og:title" content="Yatri Suraksha - Tourist Safety App" />
+    <meta property="og:description" content="A safety companion application for travelers with real-time location tracking" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Prevent zoom on inputs (mobile) -->
+    <style>
+      html { 
+        touch-action: manipulation; 
+      }
+      input, select, textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
   </body>
 </html>

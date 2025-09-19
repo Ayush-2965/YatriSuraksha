@@ -1,0 +1,287 @@
+
+
+.local-news-page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  color: white;
+  padding: 16px 20px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.alert-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #dc2626;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Filters */
+.filter-container {
+  padding: 16px 20px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.filter-container::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 20px;
+  background: white;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-pill.active {
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.filter-pill.active svg {
+  transform: rotate(180deg);
+}
+
+/* News Feed */
+.news-feed {
+  padding: 0 20px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border: 1px solid #f1f5f9;
+}
+
+.news-content {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+}
+
+.news-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.news-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.category-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.news-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.news-description {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.read-more-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #1f2937;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: auto;
+  transition: background 0.2s ease;
+}
+
+.read-more-button:hover {
+  background: #374151;
+}
+
+/* Floating Add Button */
+.floating-add-button {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 200;
+}
+
+.floating-add-button:hover {
+  background: #1e40af;
+  transform: scale(1.1);
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 150;
+}
+
+.bottom-nav a {
+  text-decoration: none;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.bottom-nav a.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+/* Bottom nav (default for mobile) */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 150;
+}
+
+.bottom-nav a {
+  text-decoration: none;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;             /* spacing between icon + label */
+  transition: color 0.2s ease;
+}
+
+.bottom-nav a svg {
+  font-size: 22px;      /* icon size for mobile */
+}
+
+.bottom-nav a.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Switch to left sidebar on desktop */
+@media (min-width: 768px) {
+  .bottom-nav {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: auto;
+    width: 90px;                 /* slightly wider sidebar */
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 0;
+    gap: 28px;                   /* spacing between nav items */
+    border-top: none;
+    border-right: 1px solid #e5e7eb;
+  }
+
+  .bottom-nav a {
+    font-size: 14px;
+    gap: 8px;                    /* more breathing room between icon + label */
+  }
+
+  .bottom-nav a svg {
+    font-size: 26px;             /* slightly bigger icons on desktop */
+  }
+}
+.bottom-nav {
+  display: none !important;
+}
